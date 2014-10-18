@@ -13,7 +13,9 @@
 */
 
 //your code here
-
+function uselessFunction() {
+	return 'useless';
+}
 //end your code
 
 var bar = 'not a function';
@@ -29,7 +31,16 @@ var barType = typeof bar;
 */
 
 //your code here
-
+var bar = function(doubleArray) {
+	var tempArray = doubleArray.slice(0);
+	for (var i = 0; i < doubleArray.length; i++ ) {
+		doubleArray[i] *= 2;
+		if (doubleArray[i] != tempArray[i] * 2) {
+			return false;
+		}
+	}
+	return true;
+} 
 //end your code
 
 /**
@@ -46,5 +57,21 @@ var barType = typeof bar;
 */
 
 //your code here
-
+function emailParse(emailArray) {
+	//create multi dimensional array
+	var parsedArray = new Array(3);
+	for (var i = 0; i < parsedArray.length; i++) { 
+		parsedArray[i] = new Array(emailArray.length);
+	}
+	//parse EMs into array
+	var atIndex, dotIndex;
+	for(i = 0; i < emailArray.length; i++) {
+		atIndex = emailArray[i].indexOf('@');
+		dotIndex = emailArray[i].lastIndexOf('.');
+		parsedArray[0][i] = emailArray[i].substr(0, atIndex);
+		parsedArray[1][i] = emailArray[i].substr(atIndex + 1, (dotIndex - atIndex - 1));
+		parsedArray[2][i] = emailArray[i].substr(dotIndex);
+	}
+	return parsedArray;
+}
 //end your code
