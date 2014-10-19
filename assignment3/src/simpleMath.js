@@ -14,9 +14,16 @@ SimpleMath.prototype.getFactorial = function(number) {
     throw new Error('There is no factorial for negative numbers');
   }
   //your code here
-  else {
-    return undefined;
+  if (number === 0) {
+    number = 1;
   }
+  else {
+      var n;
+      for (n = number - 1; n > 0; n--) {
+        number += n;
+      }
+  }
+  return number;
   //end your code
 };
 
@@ -28,7 +35,15 @@ SimpleMath.prototype.getFactorial = function(number) {
 */
 SimpleMath.prototype.signum = function(number) {
  //your code here
- return undefined;
+ if (number < 0) {
+  return -1;
+ }
+ else if (number % 2 == 0) {
+  return 1;
+ }
+ else if (number % 2 == 1) {
+  return 0
+}
  //end your code
 };
 
@@ -39,8 +54,9 @@ SimpleMath.prototype.signum = function(number) {
 * @return {number} the mathematical average of the two numbers.
 */
 SimpleMath.prototype.average = function(number1, number2) {
-  //your code here
-  return undefined;
+  //your code here\
+  var number = (number1 + number2) / 2;
+  return number;
   //end your code
 };
 

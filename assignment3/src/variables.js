@@ -30,7 +30,7 @@ return true if b is a primitive string value, false otherwise
 */
 function isString(b) {
   //your code here
-  if (typeof b == 'string') {
+  if (typeof b === 'string') {
     return true;
   }
   return false;

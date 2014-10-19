@@ -10,7 +10,12 @@
 
 function returnObjectLiteral() {
   //your code here
-  return undefined; //Modify ONLY this line
+  return {
+  	type: 'Goldfish', 
+  	brand: 'Pepperidge Farm',
+  	flavor: 'Cheddar',
+  	count: 2000
+  	}; //Modify ONLY this line
   //end your code
 }
 
@@ -36,6 +41,34 @@ function returnObjectLiteral() {
 
 //your code here
 
+function Cat(name, color) { //cat constructor
+	this.name = name;
+	this.color = color;
+  this.furnitureArray = [];
+}
+
+function Furniture(name, cost) { //furniture constructor
+  this.name = name;
+  this.cost = cost;
+}
+
+Cat.prototype.destroyFurniture = function(name, cost) {
+    var dFurniture = new Furniture(name, cost);
+    this.furnitureArray.push(dFurniture);
+}
+
+Cat.prototype.lastDestroyedFurniture = function() {
+    return this.furnitureArray[destFurniture.length() - 1];
+}
+
+Cat.prototype.totalDestroyed = function() {
+    return this.furnitureArray.length();
+}
+
+Cat.prototype.nthDestroyed = function (n) {
+    return this.furnitureArray[n];
+}
+
 //end your code
 
 /**
@@ -45,7 +78,10 @@ function returnObjectLiteral() {
 */
 
 //your code here
-
+var myCat = new Cat('Maru', 'Orange');
+myCat.destroyFurniture('Chair', 200);
+myCat.destroyFurniture('Couch', 800);
+myCat.destroyFurniture('Bed', 300);
 //end your code
 
 /**
