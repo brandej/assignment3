@@ -38,10 +38,10 @@ SimpleMath.prototype.signum = function(number) {
  if (number < 0) {
   return -1;
  }
- else if (number % 2 == 0) {
+ else if (number > 0) {
   return 1;
  }
- else if (number % 2 == 1) {
+ else if (number === 0) {
   return 0
 }
  //end your code

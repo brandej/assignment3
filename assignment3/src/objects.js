@@ -41,34 +41,42 @@ function returnObjectLiteral() {
 
 //your code here
 
-function Cat(name, color) { //cat constructor
+/* Cat Constructor */
+function Cat(name, color) {
 	this.name = name;
 	this.color = color;
   this.furnitureArray = [];
+
+  this.destroyFurniture = function(name, cost) {
+    var dFurniture = new Furniture(name, cost);
+    this.furnitureArray.push({name: dFurniture.name, cost: dFurniture.cost});
+  };
+
+  this.lastDestroyedFurniture = function() {
+    var len = this.furnitureArray.length -1;
+    return this.furnitureArray[len];
+  };
+
+  this.totalDestroyed = function() {
+    var n = 0;
+    var sum = 0;
+    var len = this.furnitureArray.length;
+    for (n = 0; n < len; n++) {
+      sum += this.furnitureArray[n].cost;
+    }
+    return sum;
+  };
+
+  this.nthDestroyed = function (n) {
+    return this.furnitureArray[n];
+  };
 }
 
-function Furniture(name, cost) { //furniture constructor
+/* Furniture Constructor */
+function Furniture(name, cost) {
   this.name = name;
   this.cost = cost;
 }
-
-Cat.prototype.destroyFurniture = function(name, cost) {
-    var dFurniture = new Furniture(name, cost);
-    this.furnitureArray.push(dFurniture);
-}
-
-Cat.prototype.lastDestroyedFurniture = function() {
-    return this.furnitureArray[destFurniture.length() - 1];
-}
-
-Cat.prototype.totalDestroyed = function() {
-    return this.furnitureArray.length();
-}
-
-Cat.prototype.nthDestroyed = function (n) {
-    return this.furnitureArray[n];
-}
-
 //end your code
 
 /**
@@ -93,5 +101,12 @@ myCat.destroyFurniture('Bed', 300);
 * @return {string} - The cats reaction.
 */
 //your code here
-
+Cat.prototype.pet = function(n) {
+  if (n > 2.5) {
+    return 'CLAW!';
+  }
+  else if (n <= 2.5) {
+    return 'Purr.';
+  }
+}
 //end your code
