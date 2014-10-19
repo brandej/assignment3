@@ -70,7 +70,7 @@ function emailParse(emailArray) {
 		dotIndex = emailArray[i].lastIndexOf('.');
 		parsedArray[0][i] = emailArray[i].substr(0, atIndex);
 		parsedArray[1][i] = emailArray[i].substr(atIndex + 1, (dotIndex - atIndex - 1));
-		parsedArray[2][i] = emailArray[i].substr(dotIndex);
+		parsedArray[2][i] = emailArray[i].substr(dotIndex + 1);
 	}
 	return parsedArray;
 }
