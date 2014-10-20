@@ -14,7 +14,7 @@
 
 //your code here
 function uselessFunction() {
-	return 'useless';
+  return 'useless';
 }
 //end your code
 
@@ -32,14 +32,14 @@ var barType = typeof bar;
 
 //your code here
 var bar = function(doubleArray) {
-	var tempArray = doubleArray.slice(0);
-	for (var i = 0; i < doubleArray.length; i++) {
-		doubleArray[i] *= 2;
-		if (doubleArray[i] != tempArray[i] * 2) {
-			return false;
-		}
-	}
-	return true;
+  var tempArray = doubleArray.slice(0);
+  for (var i = 0; i < doubleArray.length; i++) {
+   doubleArray[i] *= 2;
+   if (doubleArray[i] != tempArray[i] * 2) {
+    return false;
+  }
+}
+return true;
 };
 //end your code
 
@@ -58,21 +58,21 @@ var bar = function(doubleArray) {
 
 //your code here
 function emailParse(emailArray) {
-	//create multi dimensional array
-	var parsedArray = new Array(3);
-	for (var i = 0; i < parsedArray.length; i++) {
-		parsedArray[i] = new Array(emailArray.length);
-	}
-	//parse EMs into array
-	var atIndex, dotIndex;
-	for (i = 0; i < emailArray.length; i++) {
-		atIndex = emailArray[i].indexOf('@');
-		dotIndex = emailArray[i].lastIndexOf('.');
-		parsedArray[0][i] = emailArray[i].substr(0, atIndex);
-		var midSize = dotIndex - atIndex - 1;
-		parsedArray[1][i] = emailArray[i].substr(atIndex + 1, midSize);
-		parsedArray[2][i] = emailArray[i].substr(dotIndex + 1);
-	}
-	return parsedArray;
+//create multi dimensional array
+var parsedArray = new Array(3);
+for (var i = 0; i < parsedArray.length; i++) {
+	parsedArray[i] = new Array(emailArray.length);
+}
+//parse EMs into array
+var atIndex, dotIndex;
+for (i = 0; i < emailArray.length; i++) {
+  atIndex = emailArray[i].indexOf('@');
+  dotIndex = emailArray[i].lastIndexOf('.');
+  parsedArray[0][i] = emailArray[i].substr(0, atIndex);
+  var midSize = dotIndex - atIndex - 1;
+  parsedArray[1][i] = emailArray[i].substr(atIndex + 1, midSize);
+  parsedArray[2][i] = emailArray[i].substr(dotIndex + 1);
+}
+return parsedArray;
 }
 //end your code
