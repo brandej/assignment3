@@ -42,7 +42,7 @@ SimpleMath.prototype.signum = function(number) {
   return 1;
  }
  else if (number === 0) {
-  return 0
+  return 0;
 }
  //end your code
 };

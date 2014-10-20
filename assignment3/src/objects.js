@@ -11,11 +11,11 @@
 function returnObjectLiteral() {
   //your code here
   return {
-  	type: 'Goldfish', 
+  	type: 'Goldfish',
   	brand: 'Pepperidge Farm',
   	flavor: 'Cheddar',
   	count: 2000
-  	}; //Modify ONLY this line
+ 	}; //Modify ONLY this line
   //end your code
 }
 
@@ -45,29 +45,29 @@ function returnObjectLiteral() {
 function Cat(name, color) {
 	this.name = name;
 	this.color = color;
-  this.furnitureArray = [];
+	this.furnitureArray = [];
 
-  this.destroyFurniture = function(name, cost) {
-    var dFurniture = new Furniture(name, cost);
-    this.furnitureArray.push({name: dFurniture.name, cost: dFurniture.cost});
-  };
+ 	this.destroyFurniture = function(name, cost) {
+  	var dFurniture = new Furniture(name, cost);
+ 		this.furnitureArray.push({name: dFurniture.name, cost: dFurniture.cost});
+ 	};
 
-  this.lastDestroyedFurniture = function() {
-    var len = this.furnitureArray.length -1;
-    return this.furnitureArray[len];
-  };
+ 	this.lastDestroyedFurniture = function() {
+ 		var len = this.furnitureArray.length - 1;
+  	return this.furnitureArray[len];
+ 	};
 
-  this.totalDestroyed = function() {
-    var n = 0;
-    var sum = 0;
-    var len = this.furnitureArray.length;
-    for (n = 0; n < len; n++) {
-      sum += this.furnitureArray[n].cost;
-    }
-    return sum;
-  };
+ 	this.totalDestroyed = function() {
+		var n = 0;
+  	var sum = 0;
+  	var len = this.furnitureArray.length;
+  	for (n = 0; n < len; n++) {
+    	sum += this.furnitureArray[n].cost;
+  	}
+  	return sum;
+ 	};
 
-  this.nthDestroyed = function (n) {
+  this.nthDestroyed = function(n) {
     return this.furnitureArray[n];
   };
 }
@@ -108,5 +108,5 @@ Cat.prototype.pet = function(n) {
   else if (n <= 2.5) {
     return 'Purr.';
   }
-}
+};
 //end your code
